@@ -11,6 +11,10 @@ import NavBar from './Components/NavBar';
 import './promesas/promesas'
 import ItemListContainer from './Components/ItemListContainer';
 
+import './Apis/consumiendoApi'
+import PokemonContainer from './Components/PokemonContainer';
+import PokemonList from './Components/PokemonList';
+
 function App() {
 
   /*
@@ -56,18 +60,27 @@ function App() {
       */
       }   
 
-        <img src={logo} className="App-logo" alt="logo" ></img>
-        <p>           
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React 
-        </a>
+        
+        
+  
+        {/* ejemplo para el uso de apis */}
+        {/* <PokemonContainer/> */}
+
+
+          {/* <img src={logo} className="App-logo" alt="logo" ></img>
+          <p>           
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React 
+          </a> */}
+
+
       </header>
     </div>
   );
