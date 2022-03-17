@@ -37,9 +37,8 @@ function App() {
     <div className="App">
 
       <NavBar/>
-      <ItemListContainer greeting={'hola Bienvenidos a mi Ecommerce'} />
       <header className="App-header" >
-      
+      <ItemListContainer greeting={'hola Bienvenidos a mi Ecommerce'} />
       {/*
       <BigCard ejecutar={saludar} />
 
