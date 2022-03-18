@@ -1,4 +1,7 @@
 import React, {useState,useEffect} from 'react'
+import { Link } from 'react-router-dom'
+import './item.css';
+
 const Item = (productos) => {
 
    const[initial,setClick] = useState(1)
@@ -30,10 +33,16 @@ const Item = (productos) => {
 
     return (
         <>
-            <div className='col-md-4 bg-dark text-white'>
+            <div className='col-md-4 fondo_item text-black p-2 rounded'>
 
                 <img className='img-fluid' src={productos.img} alt="" />
                 <h1>{productos.nombre}</h1>
+                <h6>{productos.desc}</h6>
+                
+                <Link to={`/detail/${productos.id}`}><button className='btn btn-primary'>Ver Más</button></Link>
+
+
+                {/* 
                 <h6>{productos.desc}</h6>
                 <h2>{productos.precio}</h2>
                 <h6>{productos.categoria}</h6>
@@ -42,7 +51,7 @@ const Item = (productos) => {
                 <button onClick={restar}>-</button>
 
                 <span >  {initial}  </span>
-                <button onClick={sumar}>+</button><br/><br/>
+                <button onClick={sumar}>+</button><br/><br/> */}
             </div>
 
         </>

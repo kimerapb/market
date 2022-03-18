@@ -81,7 +81,7 @@ git clone https: //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:x-oauth-basic@github
     //git@github.com:intelego-nexxo/nexxo-webapp.git
     //git@github.com:intelego-nexxo/nexxo-backend.git
 
-
+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
 
     Git branch
     //El comando git branch es el que usaremos principalmente para trabajar con la creación de ramas, borrado de ramas y demás. Sin embargo, no es el único comando para la operativa que veremos en este artículo, ya que existen otros subcomandos de Git útiles y necesarios para trabajar con ramas, como checkout para moverse entre ramas o merge para fusionar ramas.
@@ -104,7 +104,7 @@ git branch
 git branch experimental
 //Este comando en sí no produce ninguna salida, pero podrías ver las "branches" de un proyecto con el comando "git branch", u obtener una descripción más detallada de las ramas con este otro comando:
 
-git show - branch
+git show-branch
     //Esto nos muestra todas las ramas del proyecto con sus commits realizados. La salida sería como la de la siguiente imagen.
 
 //Pasar de una rama a otra
@@ -193,4 +193,19 @@ git remote set - url origin https: //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@gi
     git push https: //<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git
 
     //REPOSITORIO
-    git push https: //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@github.com/kimerapb/bikestote-luisRdz.git
+    git push https://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@github.com/intelego-nexxo/nexxo-webapp.git
+
+    git clone https://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@github.com/intelego-nexxo/nexxo-webapp.git
+
+    //iguala mi git con github
+    git pull https://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@github.com/intelego-nexxo/nexxo-webapp.git
+
+    //nose para qyue es
+    git fetch https://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@github.com/intelego-nexxo/nexxo-webapp.git
+
+    //git@github.com:intelego-nexxo/nexxo-webapp.git
+    //git@github.com:intelego-nexxo/nexxo-backend.git
+
+
+
+

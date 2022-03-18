@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
+import {BrowserRouter,Routes,Route} from "react-router-dom";
 //import { Component } from 'react';
 
 //import Titulo from './Components/Titulo';
@@ -14,6 +14,7 @@ import ItemListContainer from './Components/ItemListContainer';
 import './Apis/consumiendoApi'
 import PokemonContainer from './Components/PokemonContainer';
 import PokemonList from './Components/PokemonList';
+import { ItemDetailContainer } from './Components/ItemDetailContainer';
 
 function App() {
 
@@ -34,11 +35,11 @@ function App() {
 
   // Titulo('hola') == <Titulo texto='algo aqui' />
   return (
-    <div className="App">
+    <>
+          <BrowserRouter>
 
-      <NavBar/>
-      <header className="App-header" >
-      <ItemListContainer greeting={'hola Bienvenidos a mi Ecommerce'} />
+    <div className="App">
+      <header >
       {/*
       <BigCard ejecutar={saludar} />
 
@@ -58,10 +59,6 @@ function App() {
       </div>
       */
       }   
-
-        
-        
-  
         {/* ejemplo para el uso de apis */}
         {/* <PokemonContainer/> */}
 
@@ -79,10 +76,22 @@ function App() {
             Learn React 
           </a> */}
 
-
+          <NavBar/>     
       </header>
+
+      <Routes>
+        <Route path='/' element={<ItemListContainer greeting={'hola Bienvenidos a mi Ecommerce'} />} />
+        <Route path='/categoria/:categoriaId' element={<ItemListContainer greeting={'hola Bienvenidos a categorias'} />} />
+        <Route path='/detail/:itemId' element={<ItemDetailContainer/>} />
+      </Routes>
+      
+
+
     </div>
+    </BrowserRouter>
+    </>
   );
 }
 
 export default App;
+

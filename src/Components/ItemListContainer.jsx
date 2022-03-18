@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 //import ItemCount from './ItemCount'
-import {base} from './Db/base.js'
+import { pedirDatos } from './pedirDatos/pedirDatos'
 import ItemList from './ItemList'
 
 
@@ -9,14 +10,7 @@ export const ItemListContainer = (props) => {
     const[productos,setProductos] = useState([])
     const[loading,setLoading] = useState(true)
 
-
- const pedirDatos = () => {
-      return new Promise( (resolve, reject) => {
-          setTimeout(() => {
-              resolve(base)
-          }, 1500)
-      })
-  }
+    const {categoriaId} = useParams()
 
   useEffect( () => {
     setLoading(true)
@@ -24,13 +18,13 @@ export const ItemListContainer = (props) => {
     pedirDatos()
         .then((res) => {
 
-            setProductos(res)
-            // if (!categoryId) {
-            //     setProductos( res )
-            // } else {
-            //     // setProductos( res.filter((prod) => prod.categoria === categoryId) )
-            //     setProductos(res)
-            // }
+            //setProductos(res)
+            if (!categoriaId) {
+                setProductos( res )
+            } else {
+                 setProductos( res.filter((prod) => prod.categoria === categoriaId) )
+                //setProductos(res)
+            }
         })
         .catch((err) => {
             console.log(err)
@@ -39,8 +33,8 @@ export const ItemListContainer = (props) => {
            setLoading(false)
         })
 
-}, [])
-// }, [categoryId])
+//}, [])
+ }, [categoriaId])
 
 
    //const[initial,setClick] = useState(1)
