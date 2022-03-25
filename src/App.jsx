@@ -15,6 +15,7 @@ import './Apis/consumiendoApi'
 import PokemonContainer from './Components/PokemonContainer';
 import PokemonList from './Components/PokemonList';
 import { ItemDetailContainer } from './Components/ItemDetailContainer';
+import Cart from './Components/Cart';
 
 function App() {
 
@@ -83,6 +84,7 @@ function App() {
         <Route path='/' element={<ItemListContainer greeting={'hola Bienvenidos a mi Ecommerce'} />} />
         <Route path='/categoria/:categoriaId' element={<ItemListContainer greeting={'hola Bienvenidos a categorias'} />} />
         <Route path='/detail/:itemId' element={<ItemDetailContainer/>} />
+        <Route path='/cart' element={<Cart/>} />
       </Routes>
       
 
