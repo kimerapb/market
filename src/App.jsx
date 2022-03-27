@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+//iportacion de react ruter dom para poder hacer los redirecionamientos en react
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 //import { Component } from 'react';
 
@@ -16,6 +17,9 @@ import PokemonContainer from './Components/PokemonContainer';
 import PokemonList from './Components/PokemonList';
 import { ItemDetailContainer } from './Components/ItemDetailContainer';
 import Cart from './Components/Cart';
+import { CustomCartContext } from './Context/CustomCartContext';
+//iportacion del contexto para utilizarlo en todo el sitio con react
+
 
 function App() {
 
@@ -37,8 +41,8 @@ function App() {
   // Titulo('hola') == <Titulo texto='algo aqui' />
   return (
     <>
-          <BrowserRouter>
-
+    <CustomCartContext>
+    <BrowserRouter>
     <div className="App">
       <header >
       {/*
@@ -86,11 +90,9 @@ function App() {
         <Route path='/detail/:itemId' element={<ItemDetailContainer/>} />
         <Route path='/cart' element={<Cart/>} />
       </Routes>
-      
-
-
     </div>
     </BrowserRouter>
+    </CustomCartContext>
     </>
   );
 }

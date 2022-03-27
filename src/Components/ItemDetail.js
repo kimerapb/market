@@ -1,19 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
+import { CartContext } from '../Context/CartContext'
 import ItemCount from './ItemCount'
 
 const ItemDetail = ({id,nombre,desc,precio,categoria,stock,img}) => {
 
+  const carritoContext = useContext(CartContext)
+
   const[cantidad,setCantidad] = useState(0)
+  const[stockProducto,setStockProducto] = useState(stock)
      
-      const onAdd = () => {
-        const itemAgregarCart = {
-          id,
-          nombre,
-          precio,
-          img,
-          cantidad
-        }
-        console.log("🚀 ~ Hemos recibido un evento del ItemCount")
+      const onAdd = (quantityToAdd) => {
+        //cambio la cantidad
+        setCantidad (quantityToAdd)
+        //cambio el stock
+        setStockProducto(stockProducto-quantityToAdd)
+        console.log("🚀 ~ Hemos recibido un evento del ItemCount" + quantityToAdd)
+        //se agregar al carrito el producto
+        carritoContext.addItem(id,nombre,precio,img,cantidad)
          
       } 
        

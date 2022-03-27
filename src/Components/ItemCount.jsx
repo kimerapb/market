@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import React from 'react'
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 //import img_bici from '../media/bici1.png'
 
 
@@ -39,12 +39,13 @@ const sumar = ()=>{
     <div className='col-md-12'>
     {/* <img className='img-fluid' src={img_bici} alt=''/><br></br> */}
     <span >{mensaje}</span><br></br>
-      <button onClick={sumar}>+</button> 
+    <button disabled={max===0} onClick={restar}>-</button>
+
       <span >  {cantidad}  </span>
-      <button onClick={restar}>-</button><br/>
-      <Link className="nav-link" to="/cart">
-      <button className='btn btn-success my-2' onClick={onAdd}>Agregar al Carrito</button>
-      </Link>
+      <button disabled={max===0} onClick={sumar}>+</button> <br/>
+      {/* <Link className="nav-link" to="/cart"> */}
+      <button className='btn btn-success my-2' disabled={max===0} onClick={() => {onAdd(cantidad)}}>Agregar al Carrito</button>
+      {/*   */}
 
     </div>
     </>
