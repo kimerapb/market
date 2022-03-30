@@ -23,9 +23,9 @@ export const CartItem = ({id,nombre,precio,img,cantidad}) => {
             </div>
             <div className="d-flex flex-row align-items-center ">
 
-				<FontAwesomeIcon className="text-danger mx-2" icon={faMinus}></FontAwesomeIcon>
+				<FontAwesomeIcon className="text-danger mx-2" icon={faMinus} onClick={()=>{carritoContext.restarItem(id);console.log("clik" + id)}}></FontAwesomeIcon>
                 <h5 className="fs-4 text-grey mt-1 mx-2">{cantidad}</h5>
-				<FontAwesomeIcon className="text-success mx-2" icon={faPlus}></FontAwesomeIcon>
+				<FontAwesomeIcon className="text-success mx-2" icon={faPlus} onClick={()=>{carritoContext.sumarItem(id);console.log("clik" + id)}}></FontAwesomeIcon>
 
             </div>
             <div>

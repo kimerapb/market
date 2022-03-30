@@ -43,26 +43,36 @@ export const CustomCartContext = ({children}) => {
 
 	}
 
-	const clear = () => {
-		console.log("🚀 ~ clear ~ clear", clear)
+	const vaciarCart = () => {
+		console.log("🚀 ~ vaciarCart ~ vaciarCart", vaciarCart)
 		//setiar el usestate productosCart a vacio []
 		setProductosCart([])
 	}
 
-	/* 	const isInCart = (id) => {
-		
-	} */
+    const cantidadCart = () => {
+		return productosCart.reduce((acc, prod) => acc + prod.cantidad, 0)
+	}
+  
+	const totalCart = () => {
+		return productosCart.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0)
+	}
 
     const isInCart = (id) => {
-
 		return productosCart.some((prod) => prod.id === id)
+	}
 
-	  }
+	const sumarItem = (id) => {
+		setProductosCart( productosCart.map(prod => (prod.id === id ? {...prod, cantidad: (prod.cantidad+1)}: prod)))
+	}
+
+	const restarItem = (id) => {
+		setProductosCart( productosCart.map(prod => (prod.id === id ? {...prod, cantidad: (prod.cantidad-1)}: prod)))
+	}
 
 
   return (
 	
-	<CartContext.Provider value={{productosCart, addItem, removeItem, clear, isInCart}}>
+	<CartContext.Provider value={{productosCart, addItem, removeItem, vaciarCart, isInCart, totalCart, cantidadCart, restarItem, sumarItem  }}>
 		{children}
 	</CartContext.Provider>
   )

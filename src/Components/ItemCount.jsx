@@ -44,7 +44,7 @@ const sumar = ()=>{
       <span >  {cantidad}  </span>
       <button disabled={max===0} onClick={sumar}>+</button> <br/>
       {/* <Link className="nav-link" to="/cart"> */}
-      <button className='btn btn-success my-2' disabled={max===0} onClick={() => {onAdd(cantidad)}}>Agregar al Carrito</button>
+      <button className='btn btn-primary my-2' disabled={max===0} onClick={() => {onAdd(cantidad)}}>Agregar al Carrito</button>
       {/*   */}
 
     </div>

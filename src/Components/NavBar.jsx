@@ -22,12 +22,12 @@ const NavBar = () => {
         <Link className="nav-link" to="/categoria/montaña">Montaña</Link>
         </li>
         <li className="nav-item">
-        <Link className="nav-link" to="/categoria/triatlon">Triatlón</Link>
+        <Link className="nav-link" to="/categoria/triatlón">Triatlón</Link>
         </li>
       </ul>
       <span className="navbar-text">
 
-      <Link className="nav-link" to="/cart"><CartWidget/></Link>
+      <CartWidget/>
         
       </span>
     </div>
