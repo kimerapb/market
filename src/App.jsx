@@ -41,6 +41,7 @@ function App() {
   // Titulo('hola') == <Titulo texto='algo aqui' />
   return (
     <>
+   {/*  <PokemonContainer/> */}
     <CustomCartContext>
     <BrowserRouter>
     <div className="App">
