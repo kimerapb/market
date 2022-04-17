@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 //iportacion de react ruter dom para poder hacer los redirecionamientos en react
 import {BrowserRouter,Routes,Route} from "react-router-dom";
@@ -13,11 +13,12 @@ import './promesas/promesas'
 import ItemListContainer from './Components/ItemListContainer';
 
 import './Apis/consumiendoApi'
-import PokemonContainer from './Components/PokemonContainer';
-import PokemonList from './Components/PokemonList';
+//import PokemonContainer from './Components/PokemonContainer';
+//import PokemonList from './Components/PokemonList';
 import { ItemDetailContainer } from './Components/ItemDetailContainer';
 import Cart from './Components/Cart';
 import { CustomCartContext } from './Context/CustomCartContext';
+import CheckOut from './Components/checkOut/CheckOut';
 //iportacion del contexto para utilizarlo en todo el sitio con react
 
 
@@ -90,6 +91,7 @@ function App() {
         <Route path='/categoria/:categoriaId' element={<ItemListContainer greeting={'hola Bienvenidos a categorias'} />} />
         <Route path='/detail/:itemId' element={<ItemDetailContainer/>} />
         <Route path='/cart' element={<Cart/>} />
+        <Route path='/CheckOut' element={ <CheckOut/> } />
       </Routes>
     </div>
     </BrowserRouter>
