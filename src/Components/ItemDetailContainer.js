@@ -2,7 +2,6 @@ import React, { useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
 
-//import { pedirDatos } from './pedirDatos/pedirDatos'
 import { db } from '../utils/firebase'
 import { doc, getDoc } from 'firebase/firestore';
 
@@ -12,7 +11,6 @@ export const ItemDetailContainer = () => {
     const [item,setItem] = useState(null)
 
     const {itemId} = useParams()
-    console.log("🚀 ~ const", itemId)
 
     useEffect(() => {
         setLoading(true)

@@ -11,12 +11,8 @@ const ItemDetail = ({id,nombre,desc,precio,categoria,stock,img}) => {
   const[stockProducto,setStockProducto] = useState(stock)
      
       const onAdd = (quantityToAdd) => {
-        //cambio la cantidad
         setCantidad (quantityToAdd)
-        //cambio el stock
         setStockProducto(stockProducto-quantityToAdd)
-        console.log("🚀 ~ Hemos recibido un evento del ItemCount" + quantityToAdd)
-        //se agregar al carrito el producto
         carritoContext.addItem(id,nombre,precio,img,cantidad)
          
       } 
@@ -44,11 +40,6 @@ const ItemDetail = ({id,nombre,desc,precio,categoria,stock,img}) => {
             />
           </>
       }
-      {/* <h6 >{mensaje}</h6>
-        <button onClick={restar}>-</button>
-
-        <span >  {initial}  </span>
-        <button onClick={sumar}>+</button><br/><br/>  */}
 
       </div>
 

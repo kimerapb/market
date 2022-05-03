@@ -1,21 +1,14 @@
-
 import React from 'react'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../Context/CartContext'
 import { CartItem } from './CartItem'
 
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faReply, faCheck} from '@fortawesome/free-solid-svg-icons'
-//import { async } from '@firebase/util'
 
 const Cart = () => {
-  
 
-
-  
-  //const { carrito, totalCart, vaciarCart, eliminarItem } = useContext(CartContext)
    const carrito = useContext(CartContext)
 
    const productosEnCarito = carrito.productosCart
@@ -42,22 +35,8 @@ const Cart = () => {
             <hr/>
             <h2>Total: ${carrito.totalCart()}</h2>
 
-            {/*hay que utilizar arrow function para poder pasarle la funcion del context si hay que mandarle algun valior
-            
-            por ejemplo:
-            onClick={()=>{productosEnCarito.removeItem(id)}}
-
-            si no hay que mandarle un valor puede ir directo de la sig manera:
-            onClick= {productosEnCarito.removeItem}
-            
-            */}
             <button className={`mt-3 mx-1 btn btn-danger ${productosEnCarito.length === 0 ? "d-none" : ""}`} onClick={carrito.vaciarCart}>VACIAR CARRITO <FontAwesomeIcon className="text-white mx-2" icon={faTrash}></FontAwesomeIcon> </button>
-            {/* <button className='mt-3 btn btn-danger' onClick= {productosEnCarito.clear}>VACIAR CARRITO <FontAwesomeIcon className="text-white mx-2" icon={faTrash}></FontAwesomeIcon> </button> */}
-
- 
             <Link to="/CheckOut" className="mt-3 mx-1 btn btn-success ">TERMINAR COMPRA <FontAwesomeIcon className="text-white mx-2" icon={faCheck}></FontAwesomeIcon></Link>
-
-
 
           </div>
           </div>

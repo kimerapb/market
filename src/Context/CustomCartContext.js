@@ -15,14 +15,8 @@ export const CustomCartContext = ({children}) => {
 				//item:{//},
 				id, nombre, precio, img, cantidad
 			}
-			console.log("🚀 ~ addItem", Item)	
 			setProductosCart([...productosCart, Item])
         } else {
-
-			/* 
-			const productosActualizados = productosCart.map(prod => (prod.id === id ? {...prod, cantidad: (prod.cantidad+cantidad)}: prod))
-            console.log("🚀 ~ newMproductosActualizadosarkers", productosActualizados)
-			setProductosCart(productosActualizados) */
 
 			setProductosCart( productosCart.map(prod => (prod.id === id ? {...prod, cantidad: (prod.cantidad+cantidad)}: prod)))
 
@@ -31,21 +25,10 @@ export const CustomCartContext = ({children}) => {
 	}
 	
 	const removeItem = (itemId) => {
-    	console.log("🚀 ~ removeItem ~ itemId", itemId)
-
-		/*
-		const productosActualizados = productosCart.filter(producto=>producto.id !== itemId)
-        console.log("🚀 ~ productosActualizados", productosActualizados)
-		setProductosCart(productosActualizados) */
-
 		setProductosCart( productosCart.filter((producto) => producto.id !== itemId) )
-
-
 	}
 
 	const vaciarCart = () => {
-		console.log("🚀 ~ vaciarCart ~ vaciarCart", vaciarCart)
-		//setiar el usestate productosCart a vacio []
 		setProductosCart([])
 	}
 
